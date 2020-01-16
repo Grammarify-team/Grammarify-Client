@@ -1,0 +1,23 @@
+{
+  "name": "Grammarify-Client",
+  "version": "1.0.0",
+  "description": "Front-end/Client Side Grammarify app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grammarify-team/Grammarify-Client.git"
+  },
+  "keywords": [],
+  "author": "Ahmad,Nafies,Gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grammarify-team/Grammarify-Client/issues"
+  },
+  "homepage": "https://github.com/Grammarify-team/Grammarify-Client#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}
