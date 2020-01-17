@@ -30,7 +30,6 @@ export default {
     submitFile() {
       let formData = new FormData();
       formData.append("file", this.file);
-      // console.log(this.file);
       axios
         .post("http://api-grammarify.nafies.tech/upload", formData, {
           headers: {
@@ -47,7 +46,6 @@ export default {
     },
     checkGrammar(data) {
       const url = data.link;
-      // console.log(url);
       axios({
         method: "post",
         url: "http://api-grammarify.nafies.tech/ocr/parse",
@@ -56,7 +54,6 @@ export default {
         }
       })
         .then(result => {
-          // console.log(result)
           this.parsedText = result.data.parsedText;
           this.advice = result.data.result.matches[0].message;
           this.offSet = result.data.result.matches[0].offset;
