@@ -1,6 +1,9 @@
 <template>
   <form @submit.prevent="submitFile">
     <div id="droporbrowse">
+      <loading :active.sync="isLoading" 
+          :can-cancel="true" 
+          :is-full-page="fullPage"></loading>
       <b-form-file
         v-model="file"
         :state="Boolean(file)"
@@ -16,6 +19,8 @@
 
 <script>
 import axios from "axios";
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
   data() {
@@ -23,11 +28,18 @@ export default {
       file: [],
       parsedText: '',
       advice: '',
-      offSet: ''
+      offSet: '',
+      isLoading: false,
+      fullPage: true,
+      solutions: []
     };
+  },
+  components: {
+    Loading
   },
   methods: {
     submitFile() {
+      this.isLoading = true;
       let formData = new FormData();
       formData.append("file", this.file);
       axios
@@ -57,7 +69,13 @@ export default {
           this.parsedText = result.data.parsedText;
           this.advice = result.data.result.matches[0].message;
           this.offSet = result.data.result.matches[0].offset;
-          this.$emit('submit-pdf', this.parsedText, this.advice, this.offSet)
+          this.isLoading = false;
+          this.solutions = [];
+          (result.data.result.matches[0].replacements).forEach(replacement => {
+            this.solutions.push(replacement.value)
+          })
+          this.solutions = this.solutions.slice(this.solutions.length-5)
+          this.$emit('submit-pdf', this.parsedText, this.advice, this.offSet, this.solutions)
         })
         .catch(err => console.log(err));
     }
