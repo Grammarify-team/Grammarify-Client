@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grammarify</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="outerbox">
+      <div class="innerbox"></div>
+    </div>
+    <div>
+      <button>Test</button>
+    </div>
+  </div>
+
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .outerbox {
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2%;
+    }
+
+    .innerbox {
+      width: 380px;
+      height: 380px;
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: green;
+      border-radius: 2%;
+      border: 2px dashed black;
+    }
+
+    button {
+      margin-top: 25px;
+      height: 25px;
+      width: 400px;
+    }
+  </style>
+
+
+  <div id="app"></div>
+  <script src="./src/main.js"></script>
+</body>
+
+</html>
