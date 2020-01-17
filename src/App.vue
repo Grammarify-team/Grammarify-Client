@@ -1,11 +1,16 @@
 <template>
   <div class="container">
+<<<<<<< HEAD
     <ResultContainer
       :parsedText="parsedText"
       :advice="advice"
       :hasUploaded="hasUploaded"
       :offSet="offSet"
     ></ResultContainer>
+=======
+    <ResultContainer :parsedText="parsedText" :advice="advice" :hasUploaded="hasUploaded" :offSet="offSet" :solutions="solutions">
+    </ResultContainer>
+>>>>>>> development
     <SingleFile v-on:submit-pdf="submitPdf"></SingleFile>
     <div id="fb-root" style="margin-top:10px;"></div>
     <!-- Your share button code -->
@@ -27,7 +32,12 @@ export default {
       parsedText: "",
       advice: "",
       hasUploaded: false,
+<<<<<<< HEAD
       offSet: ""
+=======
+      offSet: '',
+      solutions: []
+>>>>>>> development
     };
   },
   components: {
@@ -35,14 +45,25 @@ export default {
     ResultContainer
   },
   methods: {
+<<<<<<< HEAD
     submitPdf(text, advice, offSet) {
       console.log(text);
       console.log(advice);
+=======
+    submitPdf(text, advice, offSet, solutionsArr) {
+      console.log(text)
+      console.log(advice)
+>>>>>>> development
       this.parsedText = text;
       this.advice = advice;
       this.offSet = offSet;
       this.hasUploaded = true;
+<<<<<<< HEAD
     }
+=======
+      this.solutions = solutionsArr;
+    },
+>>>>>>> development
   }
 };
 </script>
