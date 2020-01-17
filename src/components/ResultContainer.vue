@@ -3,15 +3,15 @@
     <div class="innerbox">
       <div v-if="hasUploaded">
         <h1>Your Result</h1>
-        <hr>
+        <hr />
         <h4>Parsed Text:</h4>
         <p>{{ parsedText }}</p>
-        <hr>
+        <hr />
         <h4>Examination Comment:</h4>
         <p>{{ advice }}</p>
-        <h6>At Character: {{ Number(offSet) + 1 }} </h6>
+        <h6>At Character: {{ Number(offSet) + 1 }}</h6>
       </div>
-      <img v-if="!hasUploaded" src='../images/hiclipart.com.png' width=100 height=100>
+      <img v-if="!hasUploaded" src="../images/hiclipart.com.png" width="100" height="100" />
     </div>
   </div>
 </template>
@@ -50,5 +50,4 @@ img {
   /* justify-self: center; */
   align-self: center;
 }
-
 </style>
