@@ -8,8 +8,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
-// Vue.prototype.$http = axios
-
 new Vue({
   render: h => h(App),
 }).$mount('#app');
