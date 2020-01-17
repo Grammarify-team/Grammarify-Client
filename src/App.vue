@@ -4,7 +4,7 @@
       <div class="innerbox"></div>
     </div>
     <div>
-      <SingleFile></SingleFile>
+      <SingleFile v-on:submit-pdf="submitPdf"></SingleFile>
     </div>
   </div>
 </template>
@@ -14,11 +14,20 @@ import SingleFile from "./components/SingleFile";
 export default {
   data() {
     return {
-      message: "hello world"
+      parsedText: '',
+      advice: ''
     };
   },
   components: {
     SingleFile
+  },
+  methods: {
+    submitPdf(text, advice) {
+      console.log(text)
+      console.log(advice)
+      this.parsedText = text;
+      this.advice = advice;
+    },
   }
 };
 </script>
