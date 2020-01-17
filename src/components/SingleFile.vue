@@ -56,15 +56,13 @@ export default {
     checkGrammar(data) {
       const url = data.link;
       console.log(url);
-      axios
-        .post("http://api-grammarify.nafies.tech/ocr/parse", {
-          // headers: {
-          //   "Content-Type": "multipart/form-data"
-          // }
-          data: {
-            url
-          }
-        })
+      axios({
+        method: "post",
+        url: "http://api-grammarify.nafies.tech/ocr/parse",
+        data: {
+          url
+        }
+      })
         .then(result => {
           console.log(result.data);
           console.log("sukses");
