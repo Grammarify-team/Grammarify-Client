@@ -1,12 +1,5 @@
 <template>
-  <!-- <form @submit.prevent="submitFile">
-    <input type="file" id="file" ref="file" @change="handleFileUpload()" />
-    <button type="submit">Submit</button>
-  </form>-->
   <form @submit.prevent="submitFile">
-    <!-- <div>
-      <input type="file" id="file" ref="file" @change="handleFileUpload()" />
-    </div>-->
     <div id="droporbrowse">
       <b-form-file
         v-model="file"
@@ -17,7 +10,6 @@
     </div>
     <div>
       <b-button type="submit">Submit</b-button>
-      <!-- <button type="submit">Submit</button> -->
     </div>
   </form>
 </template>
@@ -39,15 +31,12 @@ export default {
       formData.append("file", this.file);
       // console.log(this.file);
       axios
-        // .post("http://localhost:3000/upload", formData, {
         .post("http://api-grammarify.nafies.tech/upload", formData, {
           headers: {
             "Content-Type": "multipart/form-data"
           }
         })
         .then(result => {
-          // console.log(result.data);
-          // console.log("sukses");
           this.checkGrammar(result.data);
         })
         .catch(err => console.log(err));
