@@ -22,7 +22,8 @@ export default {
     return {
       file: [],
       parsedText: '',
-      advice: ''
+      advice: '',
+      offSet: ''
     };
   },
   methods: {
@@ -58,7 +59,8 @@ export default {
           // console.log(result)
           this.parsedText = result.data.parsedText;
           this.advice = result.data.result.matches[0].message;
-          this.$emit('submit-pdf', this.parsedText, this.advice)
+          this.offSet = result.data.result.matches[0].offset;
+          this.$emit('submit-pdf', this.parsedText, this.advice, this.offSet)
         })
         .catch(err => console.log(err));
     }
