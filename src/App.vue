@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <ResultContainer></ResultContainer>
-    <SingleFile></SingleFile>
+    <SingleFile v-on:submit-pdf="submitPdf"></SingleFile>
   </div>
 </template>
 
@@ -11,13 +11,21 @@ import ResultContainer from "./components/ResultContainer";
 export default {
   data() {
     return {
-      inputText: "",
-      advice: ""
+      parsedText: '',
+      advice: ''
     };
   },
   components: {
     SingleFile,
     ResultContainer
+  },
+  methods: {
+    submitPdf(text, advice) {
+      console.log(text)
+      console.log(advice)
+      this.parsedText = text;
+      this.advice = advice;
+    },
   }
 };
 </script>
