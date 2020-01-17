@@ -26,12 +26,18 @@ export default {
   data() {
     return {
       file: [],
+<<<<<<< HEAD
+      parsedText: "",
+      advice: "",
+      offSet: ""
+=======
       parsedText: '',
       advice: '',
       offSet: '',
       isLoading: false,
       fullPage: true,
       solutions: []
+>>>>>>> development
     };
   },
   components: {
@@ -69,6 +75,9 @@ export default {
           this.parsedText = result.data.parsedText;
           this.advice = result.data.result.matches[0].message;
           this.offSet = result.data.result.matches[0].offset;
+<<<<<<< HEAD
+          this.$emit("submit-pdf", this.parsedText, this.advice, this.offSet);
+=======
           this.isLoading = false;
           this.solutions = [];
           (result.data.result.matches[0].replacements).forEach(replacement => {
@@ -76,6 +85,7 @@ export default {
           })
           this.solutions = this.solutions.slice(this.solutions.length-5)
           this.$emit('submit-pdf', this.parsedText, this.advice, this.offSet, this.solutions)
+>>>>>>> development
         })
         .catch(err => console.log(err));
     }
