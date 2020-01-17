@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <ResultContainer :parsedText="parsedText" :advice="advice" :hasUploaded="hasUploaded" :offSet="offSet">
+    <ResultContainer :parsedText="parsedText" :advice="advice" :hasUploaded="hasUploaded" :offSet="offSet" :solutions="solutions">
     </ResultContainer>
     <SingleFile v-on:submit-pdf="submitPdf"></SingleFile>
   </div>
@@ -15,7 +15,8 @@ export default {
       parsedText: '',
       advice: '',
       hasUploaded: false,
-      offSet: ''
+      offSet: '',
+      solutions: []
     };
   },
   components: {
@@ -23,13 +24,14 @@ export default {
     ResultContainer
   },
   methods: {
-    submitPdf(text, advice, offSet) {
+    submitPdf(text, advice, offSet, solutionsArr) {
       console.log(text)
       console.log(advice)
       this.parsedText = text;
       this.advice = advice;
       this.offSet = offSet;
       this.hasUploaded = true;
+      this.solutions = solutionsArr;
     },
   }
 };

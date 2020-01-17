@@ -10,6 +10,9 @@
         <h4>Examination Comment:</h4>
         <p>{{ advice }}</p>
         <h6>At Character: {{ Number(offSet) + 1 }} </h6>
+        <hr>
+        <h6>Possible Replacements:</h6>
+        <p>{{ solutions.join(",") }}</p> 
       </div>
       <img v-if="!hasUploaded" src='../images/hiclipart.com.png' width=100 height=100>
     </div>
@@ -19,7 +22,7 @@
 <script>
 import SingleFile from "./SingleFile";
 export default {
-  props: ["parsedText", "advice", "hasUploaded", "offSet"]
+  props: ["parsedText", "advice", "hasUploaded", "offSet", "solutions"]
 };
 </script>
 
@@ -51,4 +54,7 @@ img {
   align-self: center;
 }
 
+/* #solutions {
+  overflow: y-auto;
+} */
 </style>
