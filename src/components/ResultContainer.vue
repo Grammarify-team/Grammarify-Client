@@ -9,14 +9,10 @@
         <hr />
         <h4>Examination Comment:</h4>
         <p>{{ advice }}</p>
-<<<<<<< HEAD
         <h6>At Character: {{ Number(offSet) + 1 }}</h6>
-=======
-        <h6>At Character: {{ Number(offSet) + 1 }} </h6>
-        <hr>
+        <hr />
         <h6>Possible Replacements:</h6>
-        <p>{{ solutions.join(",") }}</p> 
->>>>>>> development
+        <p>{{ solutions.join(",") }}</p>
       </div>
       <img v-if="!hasUploaded" src="../images/hiclipart.com.png" width="100" height="100" />
     </div>
@@ -57,11 +53,4 @@ img {
   /* justify-self: center; */
   align-self: center;
 }
-<<<<<<< HEAD
-=======
-
-/* #solutions {
-  overflow: y-auto;
-} */
->>>>>>> development
 </style>
